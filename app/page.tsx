@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { initAnalytics } from "@/lib/firebase";
 import GuessThePlayer from "./components/GuessThePlayer";
 import StatsTrivia from "./components/StatsTrivia";
+import { Analytics } from "@vercel/analytics/react"; // 1. Added Vercel Analytics Import
 
 export default function Home() {
   // Master Navigation State
@@ -106,6 +107,9 @@ export default function Home() {
         )}
 
       </div>
+      
+      {/* 2. Added the Analytics Component at the bottom */}
+      <Analytics />
     </main>
   );
 }
