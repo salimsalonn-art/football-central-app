@@ -110,6 +110,15 @@ export default function Home() {
       
       {/* 2. Added the Analytics Component at the bottom */}
       <Analytics />
+    )
+
+      {/* Footer */}
+      <footer className="w-full max-w-md text-center py-6 mt-auto">
+        <a href="/privacy" className="text-xs font-semibold text-slate-500 hover:text-emerald-400 transition-colors">
+          Privacy Policy
+        </a>
+      </footer>
+
     </main>
   );
 }
