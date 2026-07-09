@@ -211,8 +211,8 @@ export default function GuessThePlayer({ setActiveTab }: GuessThePlayerProps) {
         </div>
       </div>
 
-      {/* Player Image Image Container */}
-      <div className="w-48 h-48 bg-slate-800 rounded-2xl overflow-hidden border-2 border-slate-700 mb-6 flex items-center justify-center relative">
+      {/* Player Image Container (Optimized for Mobile) */}
+      <div className="w-36 h-36 sm:w-48 sm:h-48 bg-slate-800 rounded-2xl overflow-hidden border-2 border-slate-700 mb-4 shrink-0 flex items-center justify-center relative">
          <img 
             src={playerDatabase[currentIndex].image} 
             alt="Guess this player" 
@@ -222,7 +222,7 @@ export default function GuessThePlayer({ setActiveTab }: GuessThePlayerProps) {
       </div>
 
       {/* The Guess Slots (Grouped by Word) */}
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8 px-2">
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-5 px-1">
         {targetName.split(" ").map((word, wordIndex, array) => {
           const previousWordsLength = array.slice(0, wordIndex).join(" ").length;
           const startIndex = wordIndex === 0 ? 0 : previousWordsLength + 1;
@@ -238,7 +238,7 @@ export default function GuessThePlayer({ setActiveTab }: GuessThePlayerProps) {
                 return (
                   <div
                     key={slotIndex}
-                    className={`w-8 h-10 sm:w-10 sm:h-12 flex items-center justify-center text-lg sm:text-xl font-bold rounded-lg border-b-4 transition-all ${
+                    className={`w-7 h-9 sm:w-10 sm:h-12 flex items-center justify-center text-base sm:text-xl font-bold rounded-lg border-b-4 transition-all ${
                       slot.char ? 'bg-emerald-500 border-emerald-700 text-slate-900 shadow-lg' : 'bg-slate-800 border-slate-700 text-transparent'
                     }`}
                   >
@@ -267,7 +267,7 @@ export default function GuessThePlayer({ setActiveTab }: GuessThePlayerProps) {
       )}
 
       {/* The 20-Letter Bank */}
-      <div className="flex flex-wrap justify-center gap-2 max-w-sm">
+      <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 w-full max-w-md px-1 mb-2">
         {letterBank.map((item) => {
           // Check if this specific button should be vibrating
           const isVibrating = vibratingBankId === item.id;
@@ -277,7 +277,7 @@ export default function GuessThePlayer({ setActiveTab }: GuessThePlayerProps) {
               key={item.id}
               onClick={() => handleBankClick(item)}
               disabled={item.used || gameStatus !== "playing"}
-              className={`w-12 h-14 text-xl font-bold rounded-lg border-b-4 flex items-center justify-center transition-all ${
+              className={`w-10 h-12 sm:w-12 sm:h-14 text-lg sm:text-xl font-bold rounded-lg border-b-4 flex items-center justify-center transition-all ${
                 item.used 
                   ? 'bg-slate-800/50 border-slate-800 text-slate-600 opacity-50 cursor-not-allowed' 
                   : 'bg-slate-700 border-slate-600 text-white hover:bg-slate-600 active:border-b-0 active:translate-y-1'
