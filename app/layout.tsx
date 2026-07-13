@@ -29,12 +29,12 @@ export default function RootLayout({
     >
       <head>
         {/* The Meta Tag for instant AdSense Verification */}
-        <meta name="google-adsense-account" content="ca-pub-2100581481152844" />
+        <meta name="google-adsense-account" content="ca-pub-4635263744783161" />
         
         {/* Standard Script Tag for serving the ads later */}
         <script 
           async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2100581481152844" 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4635263744783161" 
           crossOrigin="anonymous"
         ></script>
       </head>
